@@ -9,15 +9,28 @@
     @media (max-width: 575.98px) {
       margin-bottom: 25px;
     }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      margin-bottom: 32px;
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      margin-bottom: 45px;
+    }
 
     &:last-child {
       margin-bottom: 0;
     }
   }
 
-  .tweet-item:nth-child(2n+2) {
-    .user-infor {
+  .tweet-item:nth-child(even) {
+    .tweet-user {
+      flex-direction: row-reverse;
 
+      .user-photo {
+        text-align: right;
+      }
+    }
+
+    .user-infor {
       .user-name,
       .user-id {
         text-align: right !important;
@@ -39,9 +52,21 @@
     box-shadow: 25px 25px 75px rgba($c-blue, .1);
 
     @media (max-width: 575.98px) {
-      padding: 15px;
+      padding: 10px;
 
       font-size: 12px;
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      padding: 12px;
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      padding: 14px;
+
+      font-size: 1em;
+      line-height: 1.3;
+    }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      padding: 16px;
     }
 
     &:after {

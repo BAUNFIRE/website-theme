@@ -162,17 +162,17 @@ const bootstrapSorts = function() {
 const toggleNav = function(input, mode="toggle"/*show, hide*/) {
   let $target = $(input);
   let children = $target.find('>UL');
-  let icon = $target.find('>.expand-toggle');
+  let $link = $target.find('>A');
 
   let show = ((mode === 'toggle' && children.hasClass('hide')) || mode === 'show' );
 
   if (children.length > 0) {
     if ( show ) {
       children.removeClass('hide');
-      icon.html('indeterminate_check_box');
+      $link.addClass('submenu-indicator-minus');
     } else {
       children.addClass('hide');
-      icon.html('add_box');
+      $link.removeClass('submenu-indicator-minus');
     }
   }
 
@@ -189,18 +189,12 @@ const toggleNav = function(input, mode="toggle"/*show, hide*/) {
 }
 
 const bootstrapNav = function () {
-  // mobile nav
-  // init-attaches to js object
-  $.fn.mlStackNav();
-  // consume
-  $(".js-ml-stack-nav").mlStackNav();
-
   // sidenav
   $('.tree-nav').on('click', '.tree-nav-item', function(e) {
     // actual clicked element
     let target = e.target;
 
-    if (target.href) {
+    if (target.href && !target.href.match(/#$/) ) {
       return;
     }
 
@@ -210,12 +204,6 @@ const bootstrapNav = function () {
 
     toggleNav(e.currentTarget);
   });
-
-  // expand the current page
-  let cur = $('.tree-nav A[href="'+window.location.pathname+'"]').closest('LI');
-  cur.addClass('active');
-  toggleNav(cur, 'show');
-  $('.tree-nav').removeClass('invisible');
 }
 
 const bootstrapScrollSpy = function () {
@@ -311,8 +299,47 @@ const bootstrapApp = function() {
   //bootstrapImgZoom();
 }
 
+const formatTimePeriod = function() {
+  $(".format-datetime").each(function(index, item) {
+    const element = $(item);
+    const parts = element.data('start').split(' ');
+    const dateFormat = element.data('format') || 'MMM D, YYYY';
+    const startDate = `${parts[0]}T${parts[1]}${parts[2]}`;
+    const startTime = moment(startDate);
+    const offset = parts[2];
+    const timezone = moment.tz.names().find(x => offset === startTime.tz(x).format('ZZ'));
+    
+    const date1 = startTime.tz(timezone).format(dateFormat);
+    const time1 = startTime.tz(timezone).format('h:mm a');
+
+    const endDate = element.data('end');
+    if (!endDate) {
+      // all day long, just specify date
+      element.find('span').html(date1);
+    } else {
+      const endTime = moment(endDate);
+      const date2 = endTime.tz(timezone).format(dateFormat);
+      const time2 = endTime.tz(timezone).format('h:mm a');
+      let result = `${date1} ${time1}`;
+      if (date1 === date2) {
+        result += ` - ${time2}`;
+      } else {
+        result += ` - ${date2} ${time2}`;
+      }
+      element.find('span').html(result);
+    }
+  });
+};
+
+const lazyload = function() {
+  const observer = lozad();
+  observer.observe();
+};
+
 $(document).ready(() => {
   bootstrapApp();
+  formatTimePeriod();
+  lazyload();
 });
 
 //tab functionality

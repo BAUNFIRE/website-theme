@@ -11,249 +11,132 @@
   {{- end -}}
 {{- end -}}
 
-<body lang="en" class="{{ replaceRE "/.*" "" ($.Scratch.Get "topLevel").Dir }}">
+<body lang="en" class="{{ replaceRE "/.*" "" ($.Scratch.Get "topLevel").Dir }} {{ .Params.section }}">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57KS2MW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
   <a name="top"></a>
 
 
 <div class="main"> <!--container ends in footer html-->
-
-
+    {{ if templates.Exists "partials/header_notification.html" }}
+        {{ partial "header_notification.html" . }}
+    {{ end }}
     <header>
         <nav>
             <div class="mobile-header-container">
                 <div class="mobile-nav-header">
                     <div class="logo">
-                        <img class="logo-image" src="/imgs/rancher-logo-horiz-color.png">
+                        <a href="/"><img class="logo-image" src="/imgs/rancher-logo-horiz-color.png" alt="The Logo of Rancher: an Open Source Kubernetes Multi Cluster Management Platform"></a>
                     </div>
-        
+
+                    <div class="mobile-search"><a href="#" class="search-open" data-launch-id="open-search"><img class="icon" src="/imgs/icon-search-mobile.svg" alt="Gray Search Icon"></a></div>
+
                     <div class="mobile-menu-opener">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-
-                    <div class="grid-container mobile-header-lower-container">
-                        <div class="row">
-                            <div class="col-5 mobile-search-button /mobile-search-form">
-                                <a href="#">
-                                    <button class="button">
-                                        <svg class="icon left" enable-background="new 0 0 100 100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                            <path class="svg-face" d="m41.7 60.4c-10.4 0-18.8-8.3-18.8-18.8s8.3-18.8 18.8-18.8 18.8 8.3 18.8 18.8c-.1 10.5-8.4 18.8-18.8 18.8zm43.5 19-21.7-21.7c3.3-4.4 5.2-10 5.2-16 0-15-12.1-27.1-27.1-27.1s-27 12.1-27 27.1 12.1 27.1 27.1 27.1c6 0 11.5-1.9 16-5.2l21.7 21.7c.8.8 1.9 1.2 2.9 1.2s2.1-.4 2.9-1.2c1.7-1.8 1.7-4.3 0-5.9z"/>
-                                        </svg>
-                                        Search
-                                    </button>
-                                </a>
-                                <!-- <div class="search-container">
-                                    <input class="search-input" type="text" placeholder="SEARCH" />
-                                </div> -->
-                            </div>
-                            <div class="col-7 mobile-rancher-button">
-                                <a href="#">
-                                    <button class="button">
-                                        Rancher 2.x
-                                        <svg class="icon right" enable-background="new 0 0 12 7" viewBox="0 0 12 7" xmlns="http://www.w3.org/2000/svg">
-                                            <path class="svg-linear" d="m11 1.1-5 5-5-5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"/>
-                                        </svg>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="nav-mobile-menus jquery-accordion-menu">
                     <ul class="mobile-menus-wrap">
-                        <li class="in-contents">
-                            <a href="#">Quick start guides</a>
+                        <li class="mobile-menu-item">
+                            <a class="mobile-menu" href="#">Why Rancher?</a>
 
                             <ul class="submenu submenus-wrap">
-                                <li class="contents-container">
-                                    Quick <br>
-                                    Start <br>
-                                    Guides
-                                </li>
+                                <li class=""><a href="/why-rancher/">Why Rancher?</a></li>
+                                <li class=""><a href="/kubernetes/">Why Kubernetes?</a></li>
+                                <li class=""><a href="/why-rancher/rancher-strengthens-kubernetes/">How Rancher Strengthens Kubernetes</a></li>
+                                <li class=""><a href="/why-rancher/rancher-difference/">The Rancher Difference</a></li>
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#">Overview</a>
+                        <li class="mobile-menu-item">
+                            <a class="mobile-menu" href="#">Products</a>
 
                             <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                                <li class="">
-                                    <a href="#">Deploying Workloads</a>
-
-                                    <ul class="submenu submenus-wrap">
-                                        <li class="submenu">
-                                            <a href="#">Workload with Ingress Quick Start</a>
-                                        </li>
-                                        <li class="submenu">
-                                            <a href="#">Workload with NodePort Quick Start</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <li><a href="/products/">Overview</a></li>
+                                <li><a href="/products/rancher/">Rancher</a></li>
+                                <li><a href="/products/hosted-rancher/">Hosted Rancher</a></li>
+                                <li><a href="/products/k3s/">k3s</a></li>
+                                <li><a href="/products/longhorn/" target="">Longhorn</a></li>
+                                <li><a href="/request-a-demo/">Request a demo</a></li>
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#">Quick start guides</a>
+                        <li class="mobile-menu-item">
+                            <a class="mobile-menu" href="#">Customers</a>
 
                             <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                                <li class="">
-                                    <a href="#">Deploying Workloads</a>
-
-                                    <ul class="submenu submenus-wrap">
-                                        <li class="submenu">
-                                            <a href="#">Workload with Ingress Quick Start</a>
-                                        </li>
-                                        <li class="submenu">
-                                            <a href="#">Workload with NodePort Quick Start</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <li><a href="/customers/continental/">Continental</a></li>
+                                <li><a href="/customers/ubisoft/">Ubisoft</a></li>
+                                <li><a href="/customers/schneider-electric/">Schneider Electric</a></li>
+                                <li><a href="/customers/mpac/">MPAC</a></li>
+                                <li><a href="/customers/">See All Customer Stories</a></li>
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#">Installation</a>
+                        <li class="mobile-menu-item">
+                            <a class="mobile-menu" href="#">Community</a>
 
                             <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
+                                <li><a href="/community">Overview</a></li>
+                                <li><a href="/learning-paths">Learning Paths</a></li>
+                                <li><a href="/training/">Training</a></li>
+                                <li><a href="/tutorials/">Tutorials</a></li>
+                                <li><a href="/events/">Events</a></li>
+                                <li><a href="/online-meetups/">Online Meetups</a></li>
+                                <li><a href="/rodeos/">Rancher Rodeos</a></li>
+                                <li><a href="/kubernetes-master-class/">Kubernetes Master Classes</a></li>
+                                <li><a href="https://academy.rancher.com/">Get Certified!</a></li>
+                                <!-- <li><a href="/writing-program/">Rancher Writing Program</a></li> -->
+                                <li><a href="/quick-start/">Getting Started Guide</a></li>
+                                <li><a href="https://forums.rancher.com/">Forums</a></li>
+                                <li><a href="http://slack.rancher.io/">Slack</a></li>
+                                <li><a href="https://github.com/rancher">Github</a></li>
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#">Upgrades and Rollbackas</a>
+                        <li class="mobile-menu-item">
+                        <a class="mobile-menu" href="#">Resources</a>
 
                             <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
+                                <li><a href="/docs">Docs</a></li>
+                                <li><a href="/resources/#analyst-reports">Analyst Reports</a></li>
+                                <li><a href="/resources/#whitepapers">White Papers</a></li>
+                                <li><a href="/resources/#ebooks">Ebooks</a></li>
+                                <li><a href="/resources/#videos">Videos</a></li>
+                                <li><a href="/resources/#podcasts">Podcasts</a></li>
+                                <li><a href="/blog/">Blog</a></li>
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#">Administration</a>
+                        <li class="mobile-menu-item">
+                        <a class="mobile-menu" href="#">Projects</a>
 
                             <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
+                                <li><a href="http://k3os.io/" target="_blank">k3OS</a></li>
+                                <li><a href="http://rio.io/" target="_blank">Rio</a></li>
+                                <li><a href="http://submariner.io/" target="_blank">Submariner</a></li>
+                                <li><a href="https://longhorn.io/" target="_blank">Longhorn</a></li>
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#">Provisioning Kubernetes Clusters</a>
+                        <li class="mobile-menu-item">
+                            <a class="mobile-menu" href="#">Company</a>
 
                             <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
+                                <li><a href="/about/">About us</a></li>
+                                <li><a href="/partners/">Partners</a></li>
+                                <li><a href="/press/">Press</a></li>
+                                <li><a href="/events/">Events</a></li>
+                                <li><a href="/careers/">Careers</a></li>
+                                <li><a href="/blog/">Blog</a></li>
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#">Kubernetes in Rancher</a>
 
-                            <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">Catalog and Charts</a>
-
-                            <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">Rancher Tools</a>
-
-                            <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">Rancher CLI</a>
-
-                            <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">User Settings</a>
-
-                            <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">API</a>
-
-                            <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">FAQ</a>
-
-                            <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">Troubleshooting</a>
-
-                            <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">Contributing to Rancher</a>
-
-                            <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">Migrating from Rancher <br>v1.6 Cattle to v2.x</a>
-
-                            <ul class="submenu submenus-wrap">
-                                <li class="">
-                                    <a href="#">Deploying Rancher Server</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="back-to-the-top">
-                            <a href="#" class="submenu-indicator-close">
-                                Back to the top 
-                                <svg class="svg-icon" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                    <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                        <path d="m12 14.5 5-5 5 5"/><path d="m17 9.5v15"/>
-                                    </g>
-                                </svg>
-
-                                <span class="submenu-indicator"><span class="object1"></span><span class="object2"></span><span class="object3"></span></span>
-                            </a>
-                        </li>
+                        <li class="mobile-menu-item option-menu"><a href="/docs/">Docs</a></li>
+                        <li class="mobile-menu-item option-menu"><a href="/support">Support</a></li>
+                        <li class="mobile-menu-item option-menu"><a href="/request-a-demo/">Request a demo</a></li>
+                        <li class="mobile-menu-item option-menu"><a href="/contact/">Contact</a></li>
+                        <li class="mobile-menu-item option-menu"><a href="/pricing/">Pricing</a></li>
+                        <li class="mobile-menu-item option-menu get-started"><a href="/quick-start/">Get started</a></li>
                     </ul>
                 </div>
             </div>
@@ -262,410 +145,306 @@
                 <div class="header-wrap">
                     <div class="header-option-menus">
                         <ul>
-                            <li>
-                                <a href="#">Request a demo</a>
-                            </li>
-                            <li>
-                                <a href="#">Pricing</a>
-                            </li>
-                            <li>
-                                <a href="#">Support</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact</a>
-                            </li>
+                            <li><a href="/docs/">Docs</a></li>
+                            <li><a href="/request-a-demo/">Request a demo</a></li>
+                            <li><a href="/pricing/">Pricing</a></li>
+                            <li><a href="/support">Support</a></li>
+                            <li><a href="/contact/">Contact</a></li>
+                            <li class="search"><a href="#" class="search-open" data-launch-id="open-search"><img class="icon" src="/imgs/icon-search.svg"></a></li>
                         </ul>
                     </div>
 
                     <div class="header-primary-menus">
                         <div class="logo">
-                            <a href="/"><img class="logo-image" src="/imgs/rancher-logo-horiz-color.png"></a>
+                            <a href="/"><img class="logo-image" src="/imgs/rancher-logo-horiz-color.png" alt="Rancher Logo"></a>
                         </div>
-            
+
                         <div class="primary-menus">
                             <ul class="primary-menus-wrap">
-                                <li class="menu-why_rancher">
-                                    <a href="/what-is-rancher/overview">Why RANCHER?</a>
-                                    <ul class="primary-menus-sub">
-                                        <li class="articles-container">
-                                            <label>The Rancher Advantage</label>
-
-                                            <div class="article-item">
-                                                <div class="article-thumbmail">
-                                                    <img class="image" src="/imgs/___test-square.svg">
-                                                </div>
-                                                <div class="article-texts">
-                                                    <h1 class="title-label">
-                                                        Multi-cluster management
-                                                    </h1>
-                                                    <p class="description-label">
-                                                        Lucidus malesuada vero sudo appellatio facilisi iaceo
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="article-item">
-                                                <div class="article-thumbmail"></div>
-                                                <div class="article-texts">
-                                                    <h1 class="title-label">
-                                                        Centralized authentication
-                                                    </h1>
-                                                    <p class="description-label">
-                                                        Saepius tortor consectetuer meus abigo pneum cursus
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="article-item">
-                                                <div class="article-thumbmail"></div>
-                                                <div class="article-texts">
-                                                    <h1 class="title-label">
-                                                        Enterprise support
-                                                    </h1>
-                                                    <p class="description-label">
-                                                        Letalis urna quisque amet est minim reprobo multo dictum
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="menus-container">
-                                            <a href="/kubernetes">
-                                                <span>Why Kubernetes</span>
-                                                <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                    <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                        <path d="m19.5 12 5 5-5 5"/>
-                                                        <path d="m24.5 17h-15"/>
-                                                    </g>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-products /active">
-                                    <a href="/products">Products</a>
-
-                                    <ul class="primary-menus-sub">
-                                        <div class="grid-container">
-                                            <div class="row">
-                                                <div class="col left">
-                                                    <li class="articles-container split-half">
-                                                        <label>Rancher</label>
-
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Hybrid and multi cloud
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Lucidus malesuada vero sudo appellatio facilisi iaceo
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Workload management
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Lucidus malesuada vero sudo appellatio facilisi iaceo
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Security and compliance
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Saepius tortor consectetuer meus abigo pneum cursus
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Open source
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Saepius tortor consectetuer meus abigo pneum cursus
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Kubernetes cluster management
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Letalis urna quisque amet est minim reprobo multo dictum abdo
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </div>
-                                                <div class="col right">
-                                                    <li class="menus-container">
-                                                        <a href="/rancher-os">
-                                                            <span>RancherOS</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="/training">
-                                                            <span>Training</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="/support">
-                                                            <span>Support</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="/support/pricing">
-                                                            <span>Pricing</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a class="box" href="#">
-                                                            <span>Request a demo</span>
-                                                        </a>
-                                                    </li>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </li>
-                                <li class="menu-customers">
-                                    <a href="/customers">Customers</a>
-
-                                    <ul class="primary-menus-sub">
-                                        <div class="grid-container">
-                                            <div class="row">
-                                                <div class="col left">
-                                                    <li class="feature-container single split-half">
-                                                        <label>Featured</label>
-
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail">
-                                                                <label class="text-for-thumbnail">Imagery</label>
-                                                            </div>
-
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Illuminia
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Illumina Innovates with Rancher and Kubernetes
-
-                                                                    <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                        <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                            <path d="m19.5 12 5 5-5 5"/>
-                                                                            <path d="m24.5 17h-15"/>
-                                                                        </g>
-                                                                    </svg>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </div>
-                                                <div class="col right">
-                                                    <li class="menus-container">
-                                                        <label>Content Library</label>
-
-                                                        <a href="#">
-                                                            <span>Customers #1</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="#">
-                                                            <span>Customers #2</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="#">
-                                                            <span>Customers #3</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a class="box" href="#">
-                                                            <span>See all customers</span>
-                                                        </a>
-                                                    </li>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </li>
-                                <li class="menu-community">
-                                    <a href="/learn">Community</a>
-
-                                    <ul class="primary-menus-sub">
-                                        <div class="grid-container">
-                                            <div class="row">
-                                                <div class="col left">
-                                                    <li class="articles-container split-half">
-                                                        <label>The Rancher Community
-                                                            <ul class="sns-services set-right">
-                                                                <li><a href="#"><img src="/imgs/icon-twitter.svg"></a></li>
-                                                                <li><a href="#"><img src="/imgs/icon-linkedin.svg"></a></li>
-                                                                <li><a href="#"><img src="/imgs/icon-facebook.svg"></a></li>
-                                                                <li><a href="#"><img src="/imgs/icon-youtube.svg"></a></li>
-                                                            </ul>
-                                                        </label>
-
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Forums
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Lucidus malesuada vero sudo appellatio facilisi iaceo
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Docs
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Lucidus malesuada vero sudo appellatio facilisi iaceo
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Slack
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Saepius tortor consectetuer meus abigo pneum cursus
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Training
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Saepius tortor consectetuer meus abigo pneum cursus
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Github
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Saepius tortor consectetuer meus abigo pneum cursus
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="article-item">
-                                                            <div class="article-thumbmail"></div>
-                                                            <div class="article-texts">
-                                                                <h1 class="title-label">
-                                                                    Event & Meetups
-                                                                </h1>
-                                                                <p class="description-label">
-                                                                    Saepius tortor consectetuer meus abigo pneum cursus
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </div>
-                                                <div class="col right">
-                                                    <li class="menus-container">
-                                                        <label>Content Library</label>
-
-                                                        <a href="#">
-                                                            <span>eBooks</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="#">
-                                                            <span>Reports</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="#">
-                                                            <span>Getting Started Guide</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="#">
-                                                            <span>What is Kubernetes</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                    </li>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </li>
-                                <li class="menu-company">
-                                    <a href="#">Company</a>
+                                <li class='primary-menu-item menu-why_rancher {{ if eq .Params.section "overview" }}active{{ end }}'>
+                                    <a class="primary-menu" href="/why-rancher/">Why RANCHER?</a>
 
                                     <ul class="primary-menus-sub">
                                         <div class="grid-container">
                                             <div class="row">
                                                 <div class="col">
                                                     <li class="menus-container">
-                                                        <a href="#">
+                                                        <a href="/why-rancher/">
+                                                            <span>Why Rancher?</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/kubernetes/">
+                                                            <span>Why Kubernetes?</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/why-rancher/rancher-strengthens-kubernetes/">
+                                                            <span>How Rancher Strengthens Kubernetes</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/why-rancher/rancher-difference/">
+                                                            <span>The Rancher Difference </span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class='primary-menu-item menu-products {{ if eq .Params.section "products" }}active{{ end }}'>
+                                    <a class="primary-menu" href="/products">Products</a>
+                                    <ul class="primary-menus-sub">
+                                        <div class="grid-container">
+                                            <div class="row">
+                                                <div class="col-12 right">
+
+                                                    <ul>
+                                                        <li class="menus-container">
+                                                            <a href="/products">
+                                                                <span>Overview</span>
+                                                                <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                        <path d="m19.5 12 5 5-5 5"></path>
+                                                                        <path d="m24.5 17h-15"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </a>
+                                                            <a href="/products/rancher/" class="menu-sub-block-item">
+                                                                <span>Rancher</span>
+                                                                <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                        <path d="m19.5 12 5 5-5 5"></path>
+                                                                        <path d="m24.5 17h-15"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </a>
+                                                            <a href="/products/hosted-rancher/" class="menu-sub-block-item">
+                                                                <span>Hosted Rancher</span>
+                                                                <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                        <path d="m19.5 12 5 5-5 5"></path>
+                                                                        <path d="m24.5 17h-15"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </a>
+                                                            <a href="/products/rke/" class="menu-sub-block-item">
+                                                                <span>RKE</span>
+
+                                                                <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                        <path d="m19.5 12 5 5-5 5"></path>
+                                                                        <path d="m24.5 17h-15"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </a>
+
+                                                            <a href="/products/longhorn/" class="menu-sub-block-item">
+                                                                <span>Longhorn</span>
+
+                                                                <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                        <path d="m19.5 12 5 5-5 5"></path>
+                                                                        <path d="m24.5 17h-15"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </a>
+                                                            <a href="/products/k3s/" class="menu-sub-block-item">
+                                                                <span>K3s</span>
+                                                                <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                        <path d="m19.5 12 5 5-5 5"></path>
+                                                                        <path d="m24.5 17h-15"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                            <div class="primary-menu-blocks primary-menu-blocks-join">
+                                                <div class="menus-container menu-container-button">
+                                                    <a class="box" href="/request-a-demo/">
+                                                        <span>Request a demo</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class='primary-menu-item menu-customers {{ if eq .Params.section "customers" }}active{{ end }}'>
+                                    <a class="primary-menu" href="/customers">Customers</a>
+
+                                    <ul class="primary-menus-sub">
+                                        <div class="grid-container">
+                                            <div class="row">
+                                                <div class="col left">
+                                                    <li class="feature-container single split-half">
+                                                        <div class="label">Featured</div>
+
+                                                        <div class="article-item">
+                                                            <div class="article-thumbmail">
+                                                                <img class="image" src="/img/header-customers-featured-thumbnail.jpg" alt="A Male Scientist in a White Lab Coat Looking Into a Microscope">
+                                                            </div>
+
+                                                            <div class="article-texts">
+                                                                <a href="/customers/continental/">
+                                                                    <h2 class="title-label">Continental</h2>
+                                                                    <p class="description-label">
+                                                                        Continental Innovates with Rancher and Kubernetes
+
+                                                                        <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                            <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                                <path d="m19.5 12 5 5-5 5"/>
+                                                                                <path d="m24.5 17h-15"/>
+                                                                            </g>
+                                                                        </svg>
+                                                                    </p>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                                <div class="col right">
+                                                    <li class="menus-container">
+                                                        <div class="label">More Customers</div>
+
+                                                        <a href="/customers/ubisoft/">
+                                                            <span>Ubisoft</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/customers/schneider-electric/">
+                                                            <span>Schneider Electric</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/customers/mpac/">
+                                                            <span>MPAC</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a class="box" href="/customers/">
+                                                            <span>See All Customer Stories</span>
+                                                        </a>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class='primary-menu-item menu-community {{ if eq .Params.section "resources" }}active{{ end }}'>
+                                    <a class="primary-menu" href="/resources/">RESOURCES</a>
+
+                                    <ul class="primary-menus-sub">
+                                        <div class="grid-container">
+                                            <div class="primary-menu-blocks">
+                                                <div class="menu-sub-block">
+                                                    <ul>
+                                                        <li class="articles-container">
+                                                            <div class="label">Community</div>
+                                                            <a href="/community/" class="menu-sub-block-item">Community Overview</a>
+                                                            <a href="/quick-start/" class="menu-sub-block-item">Getting Started Guide</a>
+                                                            <a href="/learning-paths/" class="menu-sub-block-item">Learning Paths</a>
+                                                            <a href="/training/" class="menu-sub-block-item">Introductory Training</a>
+                                                            <a href="/tutorials/" class="menu-sub-block-item">Tutorials</a>
+                                                            <a href="/online-meetups/" class="menu-sub-block-item">Online Meetups</a>
+                                                            <a href="/rodeos/" class="menu-sub-block-item">Hands-on Workshops</a>
+                                                            <a href="/kubernetes-master-class/" class="menu-sub-block-item">Kubernetes Master Classes</a>
+                                                            <a href="https://academy.rancher.com/" class="menu-sub-block-item">Get Certified!</a>
+                                                            <!-- <a href="/ranchcasts/" class="menu-sub-block-item">RanchCasts</a> -->
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="menu-sub-block">
+                                                    <ul>
+                                                        <li class="articles-container">
+                                                            <div class="label">Content Library</div>
+                                                            <a href="/docs" class="menu-sub-block-item">Docs</a>
+                                                            <a href="/resources/#analyst-reports" class="menu-sub-block-item">Analyst Reports</a>
+                                                            <a href="/resources/#whitepapers" class="menu-sub-block-item">
+                                                            White Papers</a>
+                                                            <a href="/resources/#ebooks" class="menu-sub-block-item">Ebooks</a>
+                                                            <a href="/resources/#videos" class="menu-sub-block-item">Videos</a>
+                                                            <a href="/resources/#podcasts" class="menu-sub-block-item">Podcasts</a>
+                                                            <a href="/blog/" class="menu-sub-block-item">Blog</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="menu-sub-block">
+                                                    <ul>
+                                                        <li class="articles-container">
+                                                            <div class="label">Projects</div>
+                                                            <a href="http://k3os.io" target="_blank" class="menu-sub-block-item">k3OS <svg class='icon-horizontal-center' style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></a>
+                                                            <a href="https://rio.io" target="_blank" class="menu-sub-block-item">Rio <svg class='icon-horizontal-center' style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                                    <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></a>
+                                                            <a href="http://submariner.io" target="_blank" class="menu-sub-block-item">Submariner <svg class='icon-horizontal-center' style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></a>
+                                                            <a href="https://longhorn.io" target="_blank" class="menu-sub-block-item">Longhorn <svg class='icon-horizontal-center' style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="primary-menu-blocks primary-menu-blocks-join">
+                                                <div class="menu-sub-block">
+                                                    <ul>
+                                                        <li class="articles-container">
+                                                            <div class="label">Join the Community</div>
+                                                            <div class="menu-sub-items">
+                                                                <a href="https://forums.rancher.com/" class="menu-sub-block-item">Forums</a>
+                                                                <span class="menu-sub-block-item">|</span>
+                                                                <a href="http://slack.rancher.io/" class="menu-sub-block-item">Slack</a>
+                                                                <span class="menu-sub-block-item">|</span>
+                                                                <a href="https://github.com/rancher" class="menu-sub-block-item">Github</a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class='primary-menu-item menu-company {{ if eq .Params.section "company" }}active{{ end }}'>
+                                    <a class="primary-menu" href="/about/">Company</a>
+
+                                    <ul class="primary-menus-sub">
+                                        <div class="grid-container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <li class="menus-container">
+                                                        <a href="/about/">
                                                             <span>About us</span>
                                                             <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
                                                                 <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
@@ -674,16 +453,7 @@
                                                                 </g>
                                                             </svg>
                                                         </a>
-                                                        <a href="#">
-                                                            <span>Careers</span>
-                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-                                                                    <path d="m19.5 12 5 5-5 5"/>
-                                                                    <path d="m24.5 17h-15"/>
-                                                                </g>
-                                                            </svg>
-                                                        </a>
-                                                        <a href="#">
+                                                        <a href="/partners/">
                                                             <span>Partners</span>
                                                             <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
                                                                 <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
@@ -692,7 +462,7 @@
                                                                 </g>
                                                             </svg>
                                                         </a>
-                                                        <a href="#">
+                                                        <a href="/press/">
                                                             <span>Press</span>
                                                             <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
                                                                 <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
@@ -701,8 +471,26 @@
                                                                 </g>
                                                             </svg>
                                                         </a>
-                                                        <a href="#">
-                                                            <span>Contact us</span>
+                                                        <a href="/events/">
+                                                            <span>Events</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/careers/">
+                                                            <span>Careers</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/blog/">
+                                                            <span>Blog</span>
                                                             <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
                                                                 <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
                                                                     <path d="m19.5 12 5 5-5 5"/>
@@ -716,8 +504,8 @@
                                         </div>
                                     </ul>
                                 </li>
-                                <li class="menu-get_started get-started">
-                                    <a href="#">Get started</a>
+                                <li class="primary-menu-item menu-get_started get-started">
+                                    <a href="/quick-start/">Get started</a>
                                 </li>
                             </ul>
                         </div>

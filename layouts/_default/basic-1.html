@@ -2,7 +2,13 @@
 <section class="hero-type2">
     <div class="grid-container">
         <div class="row set-ground">
-            <div class="col-xl-6 offset-xl-6">
+            <div class="
+                col-xl-6 offset-xl-6
+                col-lg-6 offset-lg-6
+                col-md-6 offset-md-6
+                col-sm-6 offset-sm-6
+                col-12 offset-0
+                ">
                 <div class="decoration-container">
                     <div class="kubernetes-rise">
                         <img src="/imgs/why-kubernetes/logo-kubernetes.png">
@@ -15,7 +21,13 @@
         </div>
 
         <div class="row max-sized">
-            <div class="col-xl-7 texts-container">
+            <div class="
+                col-xl-7 offset-xl-0
+                col-lg-7 offset-lg-0
+                col-md-9 offset-md-0
+                col-sm-10 offset-sm-0
+                col-12
+                texts-container">
                 <div class="texts-wrap">
                     {{ with .Title }}
                     <h1 class="title-label">
@@ -34,6 +46,8 @@
                         {{ . }}
                     </h4>
                     {{end}}
+
+                    {{ partial "ctaheader" . }}
                 </div>
             </div>
         </div>
@@ -42,7 +56,6 @@
 {{ end }}
 
 {{ define "main" }}
-
 
   {{ .Content }}
 {{ end }}

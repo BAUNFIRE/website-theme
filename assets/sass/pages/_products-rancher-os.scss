@@ -151,6 +151,257 @@
             }
         }
     }
+
+    @media (max-width: 575.98px) {
+        .decoration.cloud-big {
+            position: relative;
+
+            height: 100%;
+
+            .image {
+                top: 80%;
+                left: 55%;
+
+                height: 120px;
+
+                margin-top: 0;
+
+                @include transform(translate(0, 0));
+            }
+        }
+
+        .texts-container {
+            z-index: 1;
+
+            margin-top: 36px;
+            padding-right: 25px;
+            padding-left: 25px;
+
+            .texts-wrap {
+                margin-top: 0;
+                margin-bottom: 120px;
+            }
+            .title-label {
+                margin-bottom: 14px;
+            
+                font-size: 2em;
+            }
+        }
+
+        .buttons-container {
+            margin-top: 20px;
+
+            .button {
+                padding: 0 20px;
+
+                max-width: 100%;
+                height: 40px;
+            }
+        }
+
+        .lower-container {
+            height: 100px;
+
+            margin-top: -100px;
+
+            .decoration.ground {
+                .cloud {
+                    position: absolute;
+    
+                    left: 37%;
+                    bottom: 90px;
+    
+                    width: 50%;
+                    max-width: 150px;
+                    height: auto;
+                }
+    
+                .ground-lower {
+                    left: 45%;
+
+                    height: 80px;
+
+                    margin-top: 20px;
+                }
+    
+                .ground-upper {
+                    height: 48px;
+                    
+                    margin-top: 52px;
+                    margin-left: 30%;
+                }
+    
+                .rancher-box {
+                    left: 58%;
+
+                    max-width: 140px;
+                }
+                .rancher-ground {}
+                .rancher-logo-wrap {
+                    position: absolute;
+                    overflow: hidden;
+    
+                    top: 50%;
+                    left: 50%;
+    
+                    width: 57px;
+                    height: 57px;
+    
+                    margin-top: -10%;
+    
+                    background-color: $c-gray-base-light;
+                    border-radius: 50%;
+    
+                    @include transform(translate(-50%, -50%));
+                }
+                .rancher-logo {
+                    position: absolute;
+    
+                    top: 50%;
+                    left: 50%;
+    
+                    width: 70%;
+                    height: auto;
+    
+                    @include transform(translate(-50%, -50%));
+                }
+            }
+        }
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        .texts-container {
+            z-index: 1;
+
+            .texts-wrap {
+                margin-top: 120px;
+                margin-bottom: 120px;
+                padding-right: 25px;
+                padding-left: 25px;
+            }
+
+            .title-label {
+                margin-bottom: 10px;
+
+                font-size: 2em;
+            }
+
+            .description-label {
+                font-size: .9em;
+            }
+        }
+
+        .lower-container {
+            height: 130px;
+            margin-top: -130px;
+
+            .decoration.ground {
+                .cloud {
+                    max-width: 200px;
+                }
+    
+                .ground-lower {}
+    
+                .ground-upper {}
+    
+                .rancher-box {
+                    max-width: 250px;
+                }
+                .rancher-ground {}
+                .rancher-logo-wrap {
+                    width: 120px;
+                    height: 120px;
+                }
+                .rancher-logo {}
+            }
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .texts-container {
+            z-index: 1;
+
+            .texts-wrap {
+                margin-top: 100px;
+                margin-bottom: 100px;
+                padding-right: 25px;
+                padding-left: 25px;
+            }
+
+            .title-label {
+                margin-bottom: 10px;
+
+                font-size: 2.4em;
+            }
+
+            .description-label {
+                font-size: 1em;
+                line-height: 1.5;
+            }
+        }
+
+        .lower-container {
+            height: 130px;
+            margin-top: -130px;
+
+            .decoration.ground {
+                .cloud {
+                    max-width: 240px;
+                }
+    
+                .ground-lower {}
+    
+                .ground-upper {}
+    
+                .rancher-box {
+                    max-width: 250px;
+                }
+                .rancher-ground {}
+                .rancher-logo-wrap {
+                    width: 120px;
+                    height: 120px;
+                }
+                .rancher-logo {}
+            }
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .texts-container {
+            .texts-wrap {
+                margin-top: 120px;
+                margin-bottom: 120px;
+                padding-right: 25px;
+                padding-left: 25px;
+            }
+
+            .title-label {
+                margin-bottom: 10px;
+
+                font-size: 2.8em;
+            }
+
+            .description-label {
+                font-size: 1.25em;
+                line-height: 1.6;
+            }
+        }
+
+        .lower-container {
+            height: 140px;
+            margin-top: -140px;
+
+            .decoration.ground {
+                .cloud {}
+    
+                .ground-lower {}
+    
+                .ground-upper {}
+    
+                .rancher-box {}
+                .rancher-ground {}
+                .rancher-logo-wrap {}
+                .rancher-logo {}
+            }
+        }
+    }
 }
 
 .products-rancher-os-screeen2 {
@@ -281,6 +532,138 @@
             }
         }
     }
+
+    @media (max-width: 575.98px) {
+        background-color: transparent;
+
+        .contents-container {
+            padding-top: 50px;
+            padding-bottom: 55px;
+        }
+
+        .video-round-item {
+            margin-top: 40px;
+        }
+        .video-button {
+            &.bottom {
+                bottom: 10%;
+            }
+            &.right {
+                right: 10%;
+            }
+        
+            button.button {
+                width: 45px;
+                min-width: 0;
+                height: 45px;
+        
+                padding: 0;
+        
+                border-width: 2px;
+            }
+            button.button .icon {
+                width: 65%;
+            }
+        }
+
+        .label {
+            line-height: 2;
+        }
+
+        .title-label {}
+
+        .buttons-container {
+            .button {
+                max-width: 260px;
+        
+                font-size: 14px;
+        
+                .icon {
+                    width: 2em;
+                    height: 2em;
+                }
+                .icon.right {
+                    right: 15px;
+                }
+            }
+        }
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        .contents-container {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .video-button {
+            &.bottom {
+                bottom: 2%;
+            }
+            &.right {
+                right: 2%;
+            }
+        
+            button.button {
+                width: 60px;
+                min-width: 0;
+                height: 60px;
+        
+                padding: 0;
+        
+                border-width: 3px;
+            }
+            button.button .icon {
+                width: 65%;
+            }
+        }
+
+        .buttons-container {
+            .button {
+                padding-right: 60px;
+        
+                .icon {
+                    width: 2em;
+                    height: 2em;
+                }
+                .icon.right {
+                    right: 15px;
+                }
+            }
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .contents-container {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+
+        .video-button {
+            &.bottom {
+                bottom: 2%;
+            }
+            &.right {
+                right: 2%;
+            }
+        
+            button.button {
+                width: 75px;
+                min-width: 0;
+                height: 75px;
+        
+                padding: 0;
+        
+                border-width: 4px;
+            }
+            button.button .icon {
+                width: 65%;
+            }
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .contents-container {
+            padding-top: 160px;
+            padding-bottom: 160px;
+        }
+    }
 }
 
 .products-rancher-os-screeen3 {
@@ -369,6 +752,73 @@
             }
         }
     }
+
+    @media (max-width: 575.98px) {
+        .head-label {
+            margin-bottom: 0;
+            padding-top: 50px;
+            padding-left: $mobile-side-space;
+            background-color: $c-gray-base-light;
+
+            line-height: 2;
+            text-align: center;
+        }
+
+        .texts-container {
+            .title-label {
+                margin-top: 25px;
+                margin-bottom: 35px;
+
+                line-height: 1.4;
+            }
+        }
+
+        .features-container {
+            padding-bottom: 20px;
+        }
+        .feature-item {}
+        .thumbnail-container {
+            max-width: 36px;
+            max-height: 36px;
+
+            margin-right: 16px;
+        }
+        .thumbnail-wrap .thumbnail {}
+
+        .text-container {
+            .title-label {
+                font-size: 16px;
+            }
+        }
+
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        .head-label {
+            padding-left: $mobile-side-space;
+        }
+
+        .features-container {
+            padding-bottom: 50px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .head-label {
+            padding-left: $mobile-side-space;
+        }
+
+        .features-container {
+            padding-bottom: 90px;
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .head-label {
+            padding-left: $mobile-side-space;
+        }
+
+        .features-container {
+            padding-bottom: 140px;
+        }
+    }
 }
 
 .products-rancher-os-screeen4 {
@@ -429,6 +879,8 @@
 
         .text-container {
             margin-top: 30px;
+            margin-top: -10px;
+            margin-bottom: 40px;
 
             min-height: 130px;
 
@@ -453,9 +905,9 @@
                 line-height: 1.665;
                 text-align: center;
 
-                opacity: 0;
+                // opacity: 0;
 
-                @include textElipsis(2, 1.665);
+                @include textElipsis(5, 1.665);
                 @include transition(opacity .25s);
             }
 
@@ -464,7 +916,7 @@
 
                 text-align: center;
 
-                opacity: 0;
+                // opacity: 0;
 
                 @include transition(opacity .25s);
 
@@ -475,20 +927,88 @@
                 }
             }
         }
-        &:hover,
-        &.active {
-            .text-container {
-                margin-top: -10px;
-                margin-bottom: 40px;
+        
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(7) {
+            .text-container .description-label {
+                min-height: 96px;
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .get-started-items-container {
+            .texts-container {
+                margin-top: 50px;
+                margin-bottom: 20px;
             }
 
-            .description-label {
-                opacity: 1;
+            .title-label {
+                line-height: 1.4;
             }
-            
+        }
+
+        .get-started-items-container {
+            padding-bottom: 0;
+        }
+        .get-started-item-container {
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+
+            .icon-container {
+                .background {
+                    max-width: 170px;
+                }
+                .icon {
+                    max-width: 60px;
+                }
+                .icon.rancher-logo {
+                    max-width: 70px;
+                }
+            }
+
             .buttons-container {
-                opacity: 1;
+                .button {
+                    font-size: 14px;
+                }
             }
+
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7) {
+                .text-container .description-label {
+                    min-height: 0;
+                }
+            }
+        }
+    }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        .get-started-items-container {
+            padding-bottom: 80px;
+        }
+        .get-started-item-container {
+            &:nth-child(5) {
+                .text-container .description-label {
+                    min-height: 0;
+                }
+            }
+            &:nth-child(6),
+            &:nth-child(7) {
+                .text-container .description-label {
+                    min-height: 96px;
+                }
+            }
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .get-started-items-container {
+            padding-bottom: 100px;
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .get-started-items-container {
+            padding-bottom: 120px;
         }
     }
 }

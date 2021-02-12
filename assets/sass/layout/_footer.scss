@@ -4,13 +4,14 @@
 
 // default footer.
 .footer-container {
+  z-index: 5;
   position: relative;
 
   color: #fff;
 
   background-color: $c-blue-dark1;
 
-  label {
+  .label {
     height: 30px;
 
     margin-bottom: 0;
@@ -37,21 +38,35 @@
       background-size: 90% auto;
       background-position: -140% bottom;
     }
-
-    .footer-side-items {
-      position: relative;
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      padding: 50px 0;
     }
   }
 }
 
+.footer-side-items {
+  position: relative;
+
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    display: flex;
+
+    margin-bottom: 50px;
+  }
+}
 .footer-news-letter-form {
   position: relative;
+
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    width: 50%;
+
+    margin-right: 0;
+  }
 
   .hs-form {
     position: relative;
     display: flex;
 
-    label {
+    .label {
       display: none;
     }
   }
@@ -66,8 +81,6 @@
   .hbspt-form .hs-form-field .input {
     width: 100% !important;
   }
-
-
 
   .hs-input {
     position: relative;
@@ -161,15 +174,30 @@
       }
     }
   }
+
+  .hs_error_rollup {
+    display: none;
+  }
+
+  .hs-error-msgs {
+    position: absolute;
+    top: 65px;
+    left: 0;
+  }
 }
 
 .footer-connect-sns {
   position: relative;
 
-  margin-top: 50px;
+  margin-top: 80px;
 
   @media (max-width: 575.98px) {
-    margin-top: 40px;
+    margin-top: 50px;
+  }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    flex: 1;
+
+    margin-top: 0;
   }
 
   ul {
@@ -178,6 +206,14 @@
     @media (max-width: 575.98px) {
       display: flex;
     }
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      display: flex;
+
+      height: 50px;
+
+      align-items: center;
+    }
+
 
     li {
       position: relative;
@@ -190,6 +226,14 @@
 
         width: 16.6666%;
         margin-right: 0;
+
+        text-align: center;
+      }
+      @media (min-width: 576px) and (max-width: 767.98px) {
+        flex: 0 0 16.6666%;
+        max-width: 16.6666%;
+
+        margin-right: auto;
 
         text-align: center;
       }
@@ -207,16 +251,17 @@
         width: 46%;
         height: auto;
       }
+      @media (min-width: 576px) and (max-width: 767.98px) {
+        width: 100%;
+        max-width: 30px;
+        height: auto;
+      }
     }
   }
 }
 
 .footer-sitemaps {
   position: relative;
-
-  @media (max-width: 575.98px) {
-    display: none;
-  }
 
   ul {
     position: relative;
@@ -229,7 +274,9 @@
       position: relative;
       display: block;
 
-      height: 28px;
+      // height: 28px;
+
+      padding-bottom: 12px;
 
       color: rgba(#fff, 0.75);
       font-size: 15px;
@@ -243,9 +290,20 @@
   a {
     color: rgba(#fff, 0.75);
     text-decoration: none;
+    line-height: 1.2;
 
     &:hover {
       color: #fff;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    // display: none;
+
+    margin-top: 40px;
+
+    ul {
+      margin-bottom: 20px;
     }
   }
 }
@@ -256,12 +314,6 @@
   .text {
     color: rgba(#fff, 0.5);
     font-size: 12px;
-
-    @media (max-width: 575.98px) {
-      padding: 20px 10px;
-
-      text-align: center;
-    }
   }
 
   ul {
@@ -298,5 +350,60 @@
     &:hover {
       color: rgba(#fff, 1);
     }
+  }
+
+  @media (max-width: 575.98px) {
+    .text {
+      padding: 25px 10px 10px;
+
+      text-align: center;
+    }
+    .sub-menus ul {
+      padding-bottom: 5px;
+
+      text-align: center;
+
+      li {
+        margin-left: 15px;
+
+        line-height: 1;
+
+        a {
+          line-height: 45px;
+        }
+      }
+
+      li:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .text {
+      padding: 25px 10px 10px;
+
+      text-align: center;
+    }
+    .sub-menus ul {
+      padding-bottom: 5px;
+
+      text-align: center;
+
+      li {
+        line-height: 1;
+
+        a {
+          line-height: 45px;
+        }
+      }
+
+      li:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991.98px) {
+  }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
   }
 }
